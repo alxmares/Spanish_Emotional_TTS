@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spanish SER Research</title>
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-content {
+        padding: 40px 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #0073e6;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 20px;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .section {
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .section p {
+      font-size: 1em;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .image-text-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 30px;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .image-text-row img {
+      width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      object-fit: cover;
+    }
+
+    .abstract-column {
+      flex: 1;
+      max-width: 48%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .side-by-side-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .side-by-side-gallery img {
+      flex: 1;
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .paper-link, .gradio-link, .code-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .paper-link {
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      color: #0056b3;
+    }
+
+    .paper-link:hover {
+      background-color: #e0e0e0;
+    }
+
+    .gradio-link {
+      background-color: #0056b3;
+      color: white;
+      font-size: 1.1em;
+      border: none;
+      margin: 20px auto;
+    }
+
+    .gradio-link:hover {
+      background-color: #003d80;
+    }
+
+    .code-link {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    .code-link:hover {
+      background-color: #e6e6e6;
+    }
+
+    figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    }
+
+    figcaption {
+    font-size: 0.85em;
+    font-style: italic;
+    color: #666;
+    margin-top: 6px;
+    text-align: center;
+    max-width: 90%;
+    }
+
+    .image-text-row figure,
+    .side-by-side-gallery figure {
+    flex: 1;
+    }
+
+    .soft-divider {
+    width: 60%;
+    max-width: 800px;
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0px auto 30px auto;
+    }
+
+    .back-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    margin: 5px auto;
+    transition: background-color 0.2s ease;
+    }
+
+    .back-button:hover {
+    background-color: #e6e6e6;
+    }
+
+    footer {
+        background-color: #ffffff;
+        border-top: 1px solid #ddd;
+        color: #555;
+        font-size: 0.95em;
+        padding: 30px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-left,
+    .footer-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-left img,
+    .footer-right img {
+        height: auto;
+        max-height: 80px;
+        width: auto;
+    }
+
+    .footer-center {
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .footer-center p {
+        margin: 4px 0;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="page-content">
+        <h1>Spanish Emotional Text-To-Speech Synthesis</h1>
+        <hr class="soft-divider">
+        <a class="gradio-link" href="https://your-gradio-link-demo.com" target="_blank">▶ Try the TTS Demo on Gradio</a>
+        <a href="index.html" class="back-button">← Back to Main</a>
+        
+
+        <div class="section">
+            <div class="image-text-row">
+                <figure>
+                    <img src="assets/tts.jpg" alt="Summary of best results and SOTA comparison">
+                    <figcaption>Our emotional TTS enables the HCI system to respond empathetically.</figcaption>
+                </figure>
+            <div class="abstract-column">
+                <p>The model <a href="https://github.com/daswer123/xtts-finetune-webui" target="_blank">xtts-finetune-webui</a> was used to fine-tune 
+                <a href="https://docs.coqui.ai/en/latest/models/xtts.html" target="_blank">XTTS</a> using the female Spanish speaker subset from the 
+                <a href="https://aclanthology.org/L02-1174/" target="_blank">INTERFACE dataset</a> (INTER1SP corpus). 
+                Fine-tuning targeted the acoustic decoder while keeping the multilingual backbone frozen, enabling efficient speaker adaptation with limited data. 
+                The process was carried out via the <a href="https://github.com/daswer123/xtts-webui" target="_blank">xtts-webui</a>, a browser-based interface 
+                that supports streamlined training and inference. This setup allowed accurate cross-lingual voice cloning from just a few seconds of reference audio, 
+                with no need for large-scale multilingual datasets.</p>
+                <a class="paper-link" href="https://www.mdpi.com/2076-3417/15/8/4340" target="_blank">Read the full paper on MDPI</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-left">
+            <img src="C:\Users\AlxMa\Documents\Python\Tesis\05-final_project\github\main\assets\uv.jpg" alt="UV Logo" style="height: 80px;">
+            <img src="C:\Users\AlxMa\Documents\Python\Tesis\05-final_project\github\main\assets\inaoe.png" alt="INAOE Logo"  style="height: 80px;">
+            <img src="C:\Users\AlxMa\Documents\Python\Tesis\05-final_project\github\main\assets\fie.png" alt="FIE Logo" style="height: 80px;">
+        </div>
+
+        <div class="footer-center">
+            <p><strong>Author:</strong> Alex Mares</p>
+            <p><strong>Collaborating Researchers:</strong></p>
+            <p>Gerardo Díaz Arango</p>
+            <p>Jorge Eduardo Pérez-Jácome Friscione</p>
+            <p>Héctor Vázquez Leal</p>
+        </div>
+
+        <div class="footer-right">
+            <img src="C:\Users\AlxMa\Documents\Python\Tesis\05-final_project\github\main\assets\secihti.png" alt="SECIHTI Logo" style="height: 40px;">
+        </div>
+    </footer>
+
+</body>
+</html>
