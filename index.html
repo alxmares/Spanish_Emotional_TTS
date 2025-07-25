@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <head>
   <meta charset="UTF-8">
-  <title>Spanish SER Research</title>
+  <title>Spanish Emotional TTS</title>
   <style>
     * {
         box-sizing: border-box;
@@ -10,7 +11,6 @@
         padding: 0;
         font-family: 'Segoe UI', sans-serif;
     }
-
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -19,31 +19,27 @@
       display: flex;
       flex-direction: column;
     }
-
     .page-content {
-        padding: 40px 5%;
+        padding: 40px 1%;
         max-width: 1200px;
         margin: 0 auto;
         flex: 1;
         display: flex;
         flex-direction: column;
     }
-
     h1 {
       font-size: 2em;
       margin-bottom: 10px;
       color: #0073e6;
       text-align: center;
     }
-
     .subtitle {
       font-size: 1.2em;
       color: #666;
       margin-bottom: 20px;
       text-align: center;
-      max-width: 80%;
+      max-width: 100%;
     }
-
     .section {
       width: 100%;
       max-width: 1200px;
@@ -127,7 +123,7 @@
       color: white;
       font-size: 1.1em;
       border: none;
-      margin: 20px auto;
+      margin: 10px auto;
     }
 
     .gradio-link:hover {
@@ -138,11 +134,24 @@
       background-color: #f9f9f9;
       border: 1px solid #ccc;
       color: #333;
-      margin-top: 20px;
+      margin: 5px auto;
     }
 
     .code-link:hover {
       background-color: #e6e6e6;
+    }
+
+    .button-row {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 10px 50px;
+    }
+
+    .gradio-link,
+    .code-link{
+        margin: 0; /* elimina márgenes verticales individuales */
     }
 
     figure {
@@ -232,9 +241,6 @@
     <div class="page-content">
         <h1>Spanish Emotional Text-To-Speech Synthesis</h1>
         <hr class="soft-divider">
-        <a class="gradio-link" href="https://your-gradio-link-demo.com" target="_blank">▶ Try the TTS Demo on Gradio</a>
-        <a href="https://alxmares.github.io/Spanish_Emphatic_HCI/" class="back-button">← Back to Main</a>
-        
 
         <div class="section">
             <div class="image-text-row">
@@ -256,6 +262,12 @@
         </div>
     </div>
     
+    <div class="button-row">
+            <a class="gradio-link" href="https://your-gradio-link-demo.com" target="_blank">▶ Try the HCI Demo on Gradio</a>
+            <a class="code-link" href="https://github.com/alxmares/Spanish_Emotional_TTS" target="_blank">View the Code on GitHub</a>
+    </div>
+    <a href="https://alxmares.github.io/HUB_Spanish_SER_HCI/" class="back-button">← Back to Main</a>
+
     <footer>
         <div class="footer-left">
             <img src="assets/uv.jpg" alt="UV Logo" style="height: 80px;">
@@ -264,11 +276,18 @@
         </div>
 
         <div class="footer-center">
-            <p><strong>Author:</strong> Alex Mares</p>
+            <p><strong>Author:</strong> Alex Mares
+            <a href="https://www.linkedin.com/in/alxmrs/" target="_blank" title="LinkedIn">🔗</a>
             <p><strong>Collaborating Researchers:</strong></p>
-            <p>Gerardo Díaz Arango</p>
-            <p>Jorge Eduardo Pérez-Jácome Friscione</p>
-            <p>Héctor Vázquez Leal</p>
+            <p>Gerardo Díaz Arango
+            <a href="https://www.researchgate.net/profile/Gerardo-Diaz-Arango" target="_blank" title="ResearchGate">🔗</a>
+            </p>
+            <p>Jorge Eduardo Pérez-Jácome Friscione
+            <a href="jperezjacome@uv.mx" title="Email">📧</a>
+            </p>
+            <p>Héctor Vázquez Leal
+                <a href="https://www.researchgate.net/profile/Hector-Vazquez-Leal" target="_blank" title="ResearchGate">🔗</a>
+            </p>
         </div>
 
         <div class="footer-right">
