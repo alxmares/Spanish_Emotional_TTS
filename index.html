@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spanish Emotional TTS</title>
   <style>
     * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
     }
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -20,12 +24,12 @@
       flex-direction: column;
     }
     .page-content {
-        padding: 40px 1%;
-        max-width: 1200px;
-        margin: 0 auto;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
+      padding: 40px 1%;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
     h1 {
       font-size: 2em;
@@ -124,6 +128,16 @@
       font-size: 1.1em;
       border: none;
       margin: 10px auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 500px) {
+      .gradio-link {
+        font-size: 0.95em;
+      }
     }
 
     .gradio-link:hover {
@@ -142,100 +156,117 @@
     }
 
     .button-row {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 10px 50px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 10px 50px;
     }
 
     .gradio-link,
-    .code-link{
-        margin: 0; /* elimina márgenes verticales individuales */
+    .code-link {
+      margin: 0;
     }
 
     figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
     }
 
     figcaption {
-    font-size: 0.85em;
-    font-style: italic;
-    color: #666;
-    margin-top: 6px;
-    text-align: center;
-    max-width: 90%;
+      font-size: 0.85em;
+      font-style: italic;
+      color: #666;
+      margin-top: 6px;
+      text-align: center;
+      max-width: 90%;
     }
 
     .image-text-row figure,
     .side-by-side-gallery figure {
-    flex: 1;
+      flex: 1;
     }
 
     .soft-divider {
-    width: 60%;
-    max-width: 800px;
-    border: none;
-    border-top: 1px solid #ddd;
-    margin: 0px auto 30px auto;
+      width: 60%;
+      max-width: 800px;
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 0px auto 30px auto;
     }
 
     .back-button {
-    display: inline-block;
-    text-decoration: none;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    color: #333;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.95em;
-    margin: 5px auto;
-    margin-bottom: 60px;
-    transition: background-color 0.2s ease;
+      display: inline-block;
+      text-decoration: none;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      color: #333;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.95em;
+      margin: 5px auto 30px auto;
+      transition: background-color 0.2s ease;
     }
 
     .back-button:hover {
-    background-color: #e6e6e6;
+      background-color: #e6e6e6;
     }
 
     footer {
-        background-color: #ffffff;
-        border-top: 1px solid #ddd;
-        color: #555;
-        font-size: 0.95em;
-        padding: 30px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+      background-color: #ffffff;
+      border-top: 1px solid #ddd;
+      color: #555;
+      font-size: 0.95em;
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .footer-left,
     .footer-right {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .footer-left img,
     .footer-right img {
-        height: auto;
-        max-height: 80px;
-        width: auto;
+      height: auto;
+      max-height: 80px;
+      width: auto;
     }
 
     .footer-center {
-        text-align: center;
-        flex-grow: 1;
+      text-align: center;
+      flex-grow: 1;
     }
 
     .footer-center p {
-        margin: 4px 0;
+      margin: 4px 0;
     }
 
+    @media screen and (max-width: 768px) {
+      .page-content {
+        width: 90%;
+      }
+
+      .image-text-row {
+        flex-direction: column-reverse;
+      }
+
+      .abstract-column,
+      .image-text-row figure {
+        max-width: 100%;
+      }
+
+      .side-by-side-gallery {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
@@ -267,7 +298,7 @@
             <a class="gradio-link" href="https://your-gradio-link-demo.com" target="_blank">▶ Try the HCI Demo on Gradio</a>
             <a class="code-link" href="https://github.com/alxmares/Spanish_Emphatic_HCI" target="_blank">View the Code on GitHub</a>
     </div>
-    <a href="https://alxmares.github.io/HUB_Spanish_SER_HCI/" class="back-button">← Back to Main</a>
+    <a href="index.html" class="back-button">← Back to Main</a>
 
     <footer>
         <div class="footer-left">
@@ -284,7 +315,7 @@
             <a href="https://www.researchgate.net/profile/Gerardo-Diaz-Arango" target="_blank" title="ResearchGate">🔗</a>
             </p>
             <p>Jorge Eduardo Pérez-Jácome Friscione
-            <a href="jperezjacome@uv.mx" title="Email">📧</a>
+            <a href="mailto:jperezjacome@uv.mx" title="Email">📧</a>
             </p>
             <p>Héctor Vázquez Leal
                 <a href="https://www.researchgate.net/profile/Hector-Vazquez-Leal" target="_blank" title="ResearchGate">🔗</a>
