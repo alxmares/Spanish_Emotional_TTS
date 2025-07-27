@@ -73,7 +73,7 @@
 
     .image-text-row img {
       width: 100%;
-      max-height: 100%;
+      max-height: 70%;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       object-fit: cover;
@@ -105,7 +105,7 @@
 
     .paper-link, .gradio-link, .code-link {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 30px;
       padding: 12px 20px;
       border-radius: 8px;
       text-decoration: none;
@@ -160,7 +160,7 @@
       gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 10px 50px;
+      margin: 10px 10px;
     }
 
     .gradio-link,
@@ -206,7 +206,7 @@
       padding: 8px 16px;
       border-radius: 6px;
       font-size: 0.95em;
-      margin: 5px auto 30px auto;
+      margin: 5px auto 10px auto;
       transition: background-color 0.2s ease;
     }
 
@@ -218,36 +218,61 @@
       background-color: #ffffff;
       border-top: 1px solid #ddd;
       color: #555;
-      font-size: 0.95em;
-      padding: 30px 40px;
+      font-size: 0.8em;
+      padding: 30px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      gap: 20px;
     }
 
-    .footer-left,
-    .footer-right {
+    .footer-logos-left,
+    .footer-logos-right {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
+      flex: 1;
+      justify-content: center;
     }
 
-    .footer-left img,
-    .footer-right img {
+    .footer-logos-left img,
+    .footer-logos-right img {
       height: auto;
-      max-height: 80px;
+      max-height: 90px;
       width: auto;
     }
 
-    .footer-center {
+    .footer-authors {
+      flex: 2;
+      min-width: 300px;
       text-align: center;
-      flex-grow: 1;
     }
 
-    .footer-center p {
+    .footer-authors p {
       margin: 4px 0;
     }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-authors {
+        order: -1;
+        width: 100%;
+      }
+
+      .footer-logos-left,
+      .footer-logos-right {
+        justify-content: center;
+        margin-top: 10px;
+      }
+    }
+
 
     @media screen and (max-width: 768px) {
       .page-content {
@@ -267,12 +292,20 @@
         flex-direction: column;
       }
     }
+    .author-tagline {
+      text-align: center;
+      font-size: 0.9em;
+      color: #999;
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
     <div class="page-content">
         <h1>Spanish Emotional Text-To-Speech Synthesis</h1>
         <hr class="soft-divider">
+        <p class="author-tagline">By: Alex Mares</p>
 
         <div class="section">
             <div class="image-text-row">
@@ -285,9 +318,6 @@
                 <a href="https://docs.coqui.ai/en/latest/models/xtts.html" target="_blank">XTTS</a> using the female Spanish speaker subset from the 
                 <a href="https://aclanthology.org/L02-1174/" target="_blank">INTERFACE dataset</a> (INTER1SP corpus). 
                 Fine-tuning targeted the acoustic decoder while keeping the multilingual backbone frozen, enabling efficient speaker adaptation with limited data. 
-                The process was carried out via the <a href="https://github.com/daswer123/xtts-webui" target="_blank">xtts-webui</a>, a browser-based interface 
-                that supports streamlined training and inference. This setup allowed accurate cross-lingual voice cloning from just a few seconds of reference audio, 
-                with no need for large-scale multilingual datasets.</p>
                 <a class="paper-link" href="https://www.mdpi.com/2076-3417/15/8/4340" target="_blank">Read the full paper on MDPI</a>
             </div>
             </div>
@@ -296,35 +326,37 @@
     
     <div class="button-row">
             <a class="gradio-link" href="https://your-gradio-link-demo.com" target="_blank">▶ Try the HCI Demo on Gradio</a>
-            <a class="code-link" href="https://github.com/alxmares/Spanish_Emphatic_HCI" target="_blank">View the Code on GitHub</a>
+            <a class="code-link" href="https://github.com/alxmares/Spanish_Emotional_TTS" target="_blank">View the Code on GitHub</a>
     </div>
     <a href="https://alxmares.github.io/HUB_Spanish_SER_HCI/" class="back-button">← Back to Main</a>
 
     <footer>
-        <div class="footer-left">
-            <img src="assets/uv.jpg" alt="UV Logo" style="height: 80px;">
-            <img src="assets/inaoe.png" alt="INAOE Logo"  style="height: 80px;">
-            <img src="assets/fie.png" alt="FIE Logo" style="height: 80px;">
-        </div>
+      <div class="footer-logos-left">
+        <img src="assets/uv.jpg" alt="UV Logo">
+        <img src="assets/inaoe.png" alt="INAOE Logo">
+        <img src="assets/fie.png" alt="FIE Logo">
+      </div>
 
-        <div class="footer-center">
-            <p><strong>Author:</strong> Alex Mares
-            <a href="https://www.linkedin.com/in/alxmrs/" target="_blank" title="LinkedIn">🔗</a>
-            <p><strong>Collaborating Researchers:</strong></p>
-            <p>Gerardo Díaz Arango
-            <a href="https://www.researchgate.net/profile/Gerardo-Diaz-Arango" target="_blank" title="ResearchGate">🔗</a>
-            </p>
-            <p>Jorge Eduardo Pérez-Jácome Friscione
-            <a href="mailto:jperezjacome@uv.mx" title="Email">📧</a>
-            </p>
-            <p>Héctor Vázquez Leal
-                <a href="https://www.researchgate.net/profile/Hector-Vazquez-Leal" target="_blank" title="ResearchGate">🔗</a>
-            </p>
-        </div>
+      <div class="footer-authors">
+        <p><strong>Author:</strong> Alex Mares
+          <a href="https://www.linkedin.com/in/alxmrs/" target="_blank" title="LinkedIn">🔗</a>
+        </p>
+        <p><strong>Collaborating Researchers:</strong></p>
+        <p>Gerardo Díaz Arango
+          <a href="https://www.researchgate.net/profile/Gerardo-Diaz-Arango" target="_blank" title="ResearchGate">🔗</a>
+        </p>
+        <p>Jorge Eduardo Pérez-Jácome Friscione
+          <a href="mailto:jperezjacome@uv.mx" title="Email">📧</a>
+        </p>
+        <p>Héctor Vázquez Leal
+          <a href="https://www.researchgate.net/profile/Hector-Vazquez-Leal" target="_blank" title="ResearchGate">🔗</a>
+        </p>
+      </div>
 
-        <div class="footer-right">
-            <img src="assets/secihti.png" alt="SECIHTI Logo" style="height: 40px;">
-        </div>
+      <div class="footer-logos-right">
+        
+        <img src="assets/secihti.png" alt="SECIHTI Logo" style="max-height: 40px;">
+      </div>
     </footer>
 
 </body>
